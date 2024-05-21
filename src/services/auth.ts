@@ -12,9 +12,9 @@ const authOptions: NextAuthConfig = {
             }
         })
     ],
-    // pages: {
-    //     signIn: '/login'
-    // },
+    pages: {
+        signIn: '/login'
+    },
     callbacks: {
         async jwt({ token, user, account }) {
             if (user) {
