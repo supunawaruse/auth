@@ -1,9 +1,11 @@
-import Image from "next/image";
+import { auth } from "@/services/auth";
+import { useSession } from "next-auth/react";
 
-export default function Home() {
+export default async function Home() {
+  const session = await auth()
   return (
     <div>
-      Home
+      Welcome : {session?.user ? session.user.name : 'Unknown'}
     </div>
   );
 }
